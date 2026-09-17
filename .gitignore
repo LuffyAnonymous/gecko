@@ -1,0 +1,9 @@
+# Client business documents (pricing/payment terms) - keep local only
+Gecko_QR_Menu_Quotation.pdf
+
+# Local testing artifacts
+gecko-menu-qr-TEST.png
+
+# OS cruft
+.DS_Store
+Thumbs.db

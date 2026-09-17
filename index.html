@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gecko — Kite Beach Menu</title>
+<meta name="description" content="Gecko kiosk at Kite Beach, Umm Suqeim, Dubai — crêpes, waffles, smoothies &amp; coffee. Digital menu.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&amp;family=Work+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.ico">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="page">
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-top">
+        <h1 class="wordmark">GECKO</h1>
+        <div class="logo-badge" aria-hidden="true">
+          <img class="logo-icon" src="assets/icons/gecko.svg" alt="">
+        </div>
+      </div>
+      <p class="tagline">Kite Beach kiosk &middot; cr&ecirc;pes, waffles &amp; juice</p>
+    </div>
+    <svg class="wave-divider" viewBox="0 0 500 44" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,22 C120,46 180,-4 260,14 C340,32 400,4 500,20 L500,44 L0,44 Z"></path>
+    </svg>
+  </header>
+
+  <main>
+    <div class="tabs-wrap">
+      <nav class="category-tabs" aria-label="Menu categories">
+        <button type="button" class="tab tab--all rot-a active" data-category="all" aria-pressed="true">All</button>
+        <button type="button" class="tab tab--coral rot-b" data-category="crepes" aria-pressed="false">Cr&ecirc;pes</button>
+        <button type="button" class="tab tab--teal rot-c" data-category="waffles" aria-pressed="false">Waffles</button>
+        <button type="button" class="tab tab--coral rot-d" data-category="drinks" aria-pressed="false">Drinks</button>
+      </nav>
+    </div>
+
+    <section class="menu-list" aria-label="Menu">
+
+      <div class="menu-group" data-category="crepes">
+        <h2 class="section-title">Cr&ecirc;pes</h2>
+        <ul class="menu-items">
+          <li class="menu-card">
+            <div class="card-photo-frame">
+              <img class="card-photo" src="assets/images/nutella-crepe.jpg" alt="Nutella Cr&ecirc;pe">
+            </div>
+            <span class="icon-badge icon-badge--coral rot-b">
+              <img class="icon" src="assets/icons/crepe.svg" alt="">
+            </span>
+            <span class="price-stamp rot-c">[AED PRICE]</span>
+            <div class="card-overlay">
+              <p class="item-name">Nutella Cr&ecirc;pe</p>
+              <p class="item-desc">Belgian chocolate, banana, digestive biscuit</p>
+            </div>
+          </li>
+          <li class="menu-card">
+            <div class="card-photo-frame">
+              <img class="card-photo" src="assets/images/balkan-crepe.jpg" alt="Balkan Cr&ecirc;pe">
+            </div>
+            <span class="icon-badge icon-badge--teal rot-d">
+              <img class="icon" src="assets/icons/crepe.svg" alt="">
+            </span>
+            <span class="price-stamp rot-a">[AED PRICE]</span>
+            <div class="card-overlay">
+              <p class="item-name">Balkan Cr&ecirc;pe</p>
+              <p class="item-desc">Serbian plazma biscuit, condensed cream</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="menu-group" data-category="waffles">
+        <h2 class="section-title">Waffles</h2>
+        <ul class="menu-items">
+          <li class="menu-card">
+            <div class="card-photo-frame">
+              <img class="card-photo" src="assets/images/bubble-waffle.jpg" alt="Bubble Waffle Classic">
+            </div>
+            <span class="icon-badge icon-badge--coral rot-c">
+              <img class="icon" src="assets/icons/waffle.svg" alt="">
+            </span>
+            <span class="price-stamp rot-b">[AED PRICE]</span>
+            <div class="card-overlay">
+              <p class="item-name">Bubble Waffle Classic</p>
+              <p class="item-desc">Golden bubble waffle, maple syrup</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="menu-group" data-category="drinks">
+        <h2 class="section-title">Drinks</h2>
+        <ul class="menu-items">
+          <li class="menu-card">
+            <div class="card-photo-frame">
+              <img class="card-photo" src="assets/images/mango-smoothie.jpg" alt="Mango Smoothie">
+            </div>
+            <span class="icon-badge icon-badge--teal rot-a">
+              <img class="icon" src="assets/icons/drink.svg" alt="">
+            </span>
+            <span class="price-stamp rot-d">[AED PRICE]</span>
+            <div class="card-overlay">
+              <p class="item-name">Mango Smoothie</p>
+              <p class="item-desc">Fresh mango, yogurt</p>
+            </div>
+          </li>
+          <li class="menu-card">
+            <div class="card-photo-frame">
+              <img class="card-photo" src="assets/images/iced-coffee.jpg" alt="Iced Coffee">
+            </div>
+            <span class="icon-badge icon-badge--coral rot-b">
+              <img class="icon" src="assets/icons/drink.svg" alt="">
+            </span>
+            <span class="price-stamp rot-c">[AED PRICE]</span>
+            <div class="card-overlay">
+              <p class="item-name">Iced Coffee</p>
+              <p class="item-desc">Espresso, milk, ice</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+    </section>
+  </main>
+
+</div>
+
+<script src="js/menu.js"></script>
+</body>
+</html>
