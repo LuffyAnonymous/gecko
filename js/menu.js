@@ -114,7 +114,9 @@
   var detailCategory = document.getElementById("detail-category");
   var detailName = document.getElementById("detail-name");
   var detailPrice = document.getElementById("detail-price");
-  var detailTags = document.getElementById("detail-tags");
+  var detailTagVeg = document.getElementById("detail-tag-veg");
+  var detailTagTime = document.getElementById("detail-tag-time");
+  var detailTime = document.getElementById("detail-time");
   var detailDesc = document.getElementById("detail-desc");
   var ingredientsWrap = document.getElementById("detail-ingredients-wrap");
   var ingredientsText = document.getElementById("detail-ingredients");
@@ -129,7 +131,12 @@
     detailCategory.textContent = trigger.getAttribute("data-category") || "";
     detailName.textContent = trigger.getAttribute("data-name");
     detailPrice.textContent = trigger.getAttribute("data-price");
-    detailTags.hidden = trigger.getAttribute("data-veg") !== "true";
+    detailTagVeg.hidden = trigger.getAttribute("data-veg") !== "true";
+
+    var time = trigger.getAttribute("data-time");
+    detailTagTime.hidden = !time;
+    detailTime.textContent = time || "";
+
     detailDesc.textContent = trigger.getAttribute("data-desc");
 
     var ingredients = trigger.getAttribute("data-ingredients");

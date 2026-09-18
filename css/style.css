@@ -397,16 +397,23 @@ body {
   gap: 4px;
 }
 
-.veg-icon {
+.veg-icon,
+.clock-icon {
   width: 12px;
   height: 12px;
   display: block;
   color: var(--sky-dark);
+  flex-shrink: 0;
 }
 
 .tag-label {
   font-size: 10px;
   font-weight: 600;
+  color: var(--ink-faint);
+}
+
+.tag-sep {
+  font-size: 10px;
   color: var(--ink-faint);
 }
 
@@ -513,11 +520,27 @@ body {
   margin-top: 8px;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 12px;
 }
 
-.detail-tags[hidden] {
+.detail-tag {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.detail-tag[hidden] {
   display: none;
+}
+
+.detail-tag .veg-icon,
+.detail-tag .clock-icon {
+  width: 14px;
+  height: 14px;
+}
+
+.detail-tag .tag-label {
+  font-size: 12px;
 }
 
 .detail-desc {
