@@ -3,72 +3,143 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gecko — Kite Beach Menu</title>
-<meta name="description" content="Gecko kiosk at Kite Beach, Umm Suqeim, Dubai — crêpes, waffles, smoothies &amp; coffee. Digital menu.">
+<title>Gecko Cafeteria — Kite Beach Menu</title>
+<meta name="description" content="Gecko Cafeteria kiosk at Kite Beach, Umm Suqeim, Dubai — crêpes, waffles, smoothies &amp; coffee. Digital menu.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bungee&amp;family=Work+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&amp;family=Work+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 <link rel="icon" href="favicon.ico">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css?v=12">
 </head>
 <body>
 
 <div class="page">
 
   <header class="site-header">
-    <div class="header-inner">
-      <div class="header-top">
-        <h1 class="wordmark">GECKO</h1>
-        <div class="logo-badge" aria-hidden="true">
-          <img class="logo-icon" src="assets/icons/gecko.svg" alt="">
+    <img class="header-gecko-bg" src="assets/icons/gecko-mascot.png" alt="" aria-hidden="true">
+    <div class="header-top">
+      <div class="header-left">
+        <div class="wordmark-group">
+          <h1 class="wordmark">gecko</h1>
+          <span class="wordmark-sub">Cafeteria</span>
         </div>
       </div>
-      <p class="tagline">Kite Beach kiosk &middot; cr&ecirc;pes, waffles &amp; juice</p>
+      <button type="button" class="info-btn" id="info-open" aria-haspopup="dialog" aria-label="Restaurant information">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+          <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/>
+          <path d="M12 11v5.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          <circle cx="12" cy="7.8" r="1" fill="currentColor"/>
+        </svg>
+      </button>
     </div>
-    <svg class="wave-divider" viewBox="0 0 500 44" preserveAspectRatio="none" aria-hidden="true">
-      <path d="M0,22 C120,46 180,-4 260,14 C340,32 400,4 500,20 L500,44 L0,44 Z"></path>
-    </svg>
+    <p class="tagline">Kite Beach kiosk &middot; fresh food by the sea</p>
   </header>
+
+  <div class="search-wrap">
+    <div class="search-bar">
+      <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.8"/>
+        <path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+      <input type="search" class="search-input" id="menu-search" placeholder="Search menu" aria-label="Search menu">
+    </div>
+  </div>
 
   <main>
     <div class="tabs-wrap">
       <nav class="category-tabs" aria-label="Menu categories">
-        <button type="button" class="tab tab--all rot-a active" data-category="all" aria-pressed="true">All</button>
-        <button type="button" class="tab tab--coral rot-b" data-category="crepes" aria-pressed="false">Cr&ecirc;pes</button>
-        <button type="button" class="tab tab--teal rot-c" data-category="waffles" aria-pressed="false">Waffles</button>
-        <button type="button" class="tab tab--coral rot-d" data-category="drinks" aria-pressed="false">Drinks</button>
+        <button type="button" class="tab active" data-category="all" aria-pressed="true">All</button>
+        <button type="button" class="tab" data-category="crepes" aria-pressed="false">Cr&ecirc;pes</button>
+        <button type="button" class="tab" data-category="waffles" aria-pressed="false">Waffles</button>
+        <button type="button" class="tab" data-category="drinks" aria-pressed="false">Drinks</button>
       </nav>
     </div>
 
     <section class="menu-list" aria-label="Menu">
 
+      <p class="search-empty" id="search-empty" hidden>No items match your search.</p>
+
       <div class="menu-group" data-category="crepes">
         <h2 class="section-title">Cr&ecirc;pes</h2>
         <ul class="menu-items">
           <li class="menu-card">
-            <div class="card-photo-frame">
-              <img class="card-photo" src="assets/images/nutella-crepe.jpg" alt="Nutella Cr&ecirc;pe">
-            </div>
-            <span class="icon-badge icon-badge--coral rot-b">
-              <img class="icon" src="assets/icons/crepe.svg" alt="">
-            </span>
-            <span class="price-stamp rot-c">[AED PRICE]</span>
-            <div class="card-overlay">
-              <p class="item-name">Nutella Cr&ecirc;pe</p>
+            <button type="button" class="card-photo-btn"
+              data-name="Nutella Cr&ecirc;pe" data-price="AED 28" data-category="Cr&ecirc;pes"
+              data-desc="Belgian chocolate, banana, digestive biscuit"
+              data-photo="assets/images/nutella-crepe.jpg" data-veg="true" aria-haspopup="dialog">
+              <img class="card-photo" src="assets/images/nutella-crepe.jpg" alt="Nutella Cr&ecirc;pe &mdash; tap to view details">
+            </button>
+            <div class="card-body">
+              <span class="card-category">Cr&ecirc;pes</span>
+              <div class="card-top-row">
+                <p class="item-name">Nutella Cr&ecirc;pe</p>
+                <span class="item-price">AED 28</span>
+              </div>
               <p class="item-desc">Belgian chocolate, banana, digestive biscuit</p>
+              <div class="item-tags">
+                <svg class="veg-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19c7 0 13-5 13-13 0-1 0-2-.3-3C10 3.5 5 8 5 15v4Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                <span class="tag-label">Veg</span>
+              </div>
             </div>
           </li>
           <li class="menu-card">
-            <div class="card-photo-frame">
-              <img class="card-photo" src="assets/images/balkan-crepe.jpg" alt="Balkan Cr&ecirc;pe">
-            </div>
-            <span class="icon-badge icon-badge--teal rot-d">
-              <img class="icon" src="assets/icons/crepe.svg" alt="">
-            </span>
-            <span class="price-stamp rot-a">[AED PRICE]</span>
-            <div class="card-overlay">
-              <p class="item-name">Balkan Cr&ecirc;pe</p>
+            <button type="button" class="card-photo-btn"
+              data-name="Balkan Cr&ecirc;pe" data-price="AED 26" data-category="Cr&ecirc;pes"
+              data-desc="Serbian plazma biscuit, condensed cream"
+              data-photo="assets/images/balkan-crepe.jpg" data-veg="true" aria-haspopup="dialog">
+              <img class="card-photo" src="assets/images/balkan-crepe.jpg" alt="Balkan Cr&ecirc;pe &mdash; tap to view details">
+            </button>
+            <div class="card-body">
+              <span class="card-category">Cr&ecirc;pes</span>
+              <div class="card-top-row">
+                <p class="item-name">Balkan Cr&ecirc;pe</p>
+                <span class="item-price">AED 26</span>
+              </div>
               <p class="item-desc">Serbian plazma biscuit, condensed cream</p>
+              <div class="item-tags">
+                <svg class="veg-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19c7 0 13-5 13-13 0-1 0-2-.3-3C10 3.5 5 8 5 15v4Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                <span class="tag-label">Veg</span>
+              </div>
+            </div>
+          </li>
+          <li class="menu-card">
+            <button type="button" class="card-photo-btn"
+              data-name="Strawberry Cr&ecirc;pe" data-price="AED 27" data-category="Cr&ecirc;pes"
+              data-desc="Fresh strawberries, whipped cream, honey"
+              data-photo="assets/images/strawberry-crepe.jpg" data-veg="true" aria-haspopup="dialog">
+              <img class="card-photo" src="assets/images/strawberry-crepe.jpg" alt="Strawberry Cr&ecirc;pe &mdash; tap to view details">
+            </button>
+            <div class="card-body">
+              <span class="card-category">Cr&ecirc;pes</span>
+              <div class="card-top-row">
+                <p class="item-name">Strawberry Cr&ecirc;pe</p>
+                <span class="item-price">AED 27</span>
+              </div>
+              <p class="item-desc">Fresh strawberries, whipped cream, honey</p>
+              <div class="item-tags">
+                <svg class="veg-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19c7 0 13-5 13-13 0-1 0-2-.3-3C10 3.5 5 8 5 15v4Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                <span class="tag-label">Veg</span>
+              </div>
+            </div>
+          </li>
+          <li class="menu-card">
+            <button type="button" class="card-photo-btn"
+              data-name="Lotus Biscoff Cr&ecirc;pe" data-price="AED 29" data-category="Cr&ecirc;pes"
+              data-desc="Lotus biscuit spread, caramelized crumbs"
+              data-photo="assets/images/biscoff-crepe.jpg" data-veg="true" aria-haspopup="dialog">
+              <img class="card-photo" src="assets/images/biscoff-crepe.jpg" alt="Lotus Biscoff Cr&ecirc;pe &mdash; tap to view details">
+            </button>
+            <div class="card-body">
+              <span class="card-category">Cr&ecirc;pes</span>
+              <div class="card-top-row">
+                <p class="item-name">Lotus Biscoff Cr&ecirc;pe</p>
+                <span class="item-price">AED 29</span>
+              </div>
+              <p class="item-desc">Lotus biscuit spread, caramelized crumbs</p>
+              <div class="item-tags">
+                <svg class="veg-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19c7 0 13-5 13-13 0-1 0-2-.3-3C10 3.5 5 8 5 15v4Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                <span class="tag-label">Veg</span>
+              </div>
             </div>
           </li>
         </ul>
@@ -78,16 +149,83 @@
         <h2 class="section-title">Waffles</h2>
         <ul class="menu-items">
           <li class="menu-card">
-            <div class="card-photo-frame">
-              <img class="card-photo" src="assets/images/bubble-waffle.jpg" alt="Bubble Waffle Classic">
-            </div>
-            <span class="icon-badge icon-badge--coral rot-c">
-              <img class="icon" src="assets/icons/waffle.svg" alt="">
-            </span>
-            <span class="price-stamp rot-b">[AED PRICE]</span>
-            <div class="card-overlay">
-              <p class="item-name">Bubble Waffle Classic</p>
+            <button type="button" class="card-photo-btn"
+              data-name="Bubble Waffle Classic" data-price="AED 24" data-category="Waffles"
+              data-desc="Golden bubble waffle, maple syrup"
+              data-photo="assets/images/bubble-waffle.jpg" data-veg="true" aria-haspopup="dialog">
+              <img class="card-photo" src="assets/images/bubble-waffle.jpg" alt="Bubble Waffle Classic &mdash; tap to view details">
+            </button>
+            <div class="card-body">
+              <span class="card-category">Waffles</span>
+              <div class="card-top-row">
+                <p class="item-name">Bubble Waffle Classic</p>
+                <span class="item-price">AED 24</span>
+              </div>
               <p class="item-desc">Golden bubble waffle, maple syrup</p>
+              <div class="item-tags">
+                <svg class="veg-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19c7 0 13-5 13-13 0-1 0-2-.3-3C10 3.5 5 8 5 15v4Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                <span class="tag-label">Veg</span>
+              </div>
+            </div>
+          </li>
+          <li class="menu-card">
+            <button type="button" class="card-photo-btn"
+              data-name="Belgian Waffle" data-price="AED 25" data-category="Waffles"
+              data-desc="Butter, maple syrup, powdered sugar"
+              data-photo="assets/images/belgian-waffle.jpg" data-veg="true" aria-haspopup="dialog">
+              <img class="card-photo" src="assets/images/belgian-waffle.jpg" alt="Belgian Waffle &mdash; tap to view details">
+            </button>
+            <div class="card-body">
+              <span class="card-category">Waffles</span>
+              <div class="card-top-row">
+                <p class="item-name">Belgian Waffle</p>
+                <span class="item-price">AED 25</span>
+              </div>
+              <p class="item-desc">Butter, maple syrup, powdered sugar</p>
+              <div class="item-tags">
+                <svg class="veg-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19c7 0 13-5 13-13 0-1 0-2-.3-3C10 3.5 5 8 5 15v4Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                <span class="tag-label">Veg</span>
+              </div>
+            </div>
+          </li>
+          <li class="menu-card">
+            <button type="button" class="card-photo-btn"
+              data-name="Banana Nutella Waffle" data-price="AED 26" data-category="Waffles"
+              data-desc="Sliced banana, Nutella, chopped hazelnuts"
+              data-photo="assets/images/banana-nutella-waffle.jpg" data-veg="true" aria-haspopup="dialog">
+              <img class="card-photo" src="assets/images/banana-nutella-waffle.jpg" alt="Banana Nutella Waffle &mdash; tap to view details">
+            </button>
+            <div class="card-body">
+              <span class="card-category">Waffles</span>
+              <div class="card-top-row">
+                <p class="item-name">Banana Nutella Waffle</p>
+                <span class="item-price">AED 26</span>
+              </div>
+              <p class="item-desc">Sliced banana, Nutella, chopped hazelnuts</p>
+              <div class="item-tags">
+                <svg class="veg-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19c7 0 13-5 13-13 0-1 0-2-.3-3C10 3.5 5 8 5 15v4Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                <span class="tag-label">Veg</span>
+              </div>
+            </div>
+          </li>
+          <li class="menu-card">
+            <button type="button" class="card-photo-btn"
+              data-name="Strawberry Waffle" data-price="AED 25" data-category="Waffles"
+              data-desc="Fresh strawberries, maple syrup"
+              data-photo="assets/images/strawberry-waffle.jpg" data-veg="true" aria-haspopup="dialog">
+              <img class="card-photo" src="assets/images/strawberry-waffle.jpg" alt="Strawberry Waffle &mdash; tap to view details">
+            </button>
+            <div class="card-body">
+              <span class="card-category">Waffles</span>
+              <div class="card-top-row">
+                <p class="item-name">Strawberry Waffle</p>
+                <span class="item-price">AED 25</span>
+              </div>
+              <p class="item-desc">Fresh strawberries, maple syrup</p>
+              <div class="item-tags">
+                <svg class="veg-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19c7 0 13-5 13-13 0-1 0-2-.3-3C10 3.5 5 8 5 15v4Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                <span class="tag-label">Veg</span>
+              </div>
             </div>
           </li>
         </ul>
@@ -97,29 +235,83 @@
         <h2 class="section-title">Drinks</h2>
         <ul class="menu-items">
           <li class="menu-card">
-            <div class="card-photo-frame">
-              <img class="card-photo" src="assets/images/mango-smoothie.jpg" alt="Mango Smoothie">
-            </div>
-            <span class="icon-badge icon-badge--teal rot-a">
-              <img class="icon" src="assets/icons/drink.svg" alt="">
-            </span>
-            <span class="price-stamp rot-d">[AED PRICE]</span>
-            <div class="card-overlay">
-              <p class="item-name">Mango Smoothie</p>
+            <button type="button" class="card-photo-btn"
+              data-name="Mango Smoothie" data-price="AED 22" data-category="Drinks"
+              data-desc="Fresh mango, yogurt"
+              data-photo="assets/images/mango-smoothie.jpg" data-veg="true" aria-haspopup="dialog">
+              <img class="card-photo" src="assets/images/mango-smoothie.jpg" alt="Mango Smoothie &mdash; tap to view details">
+            </button>
+            <div class="card-body">
+              <span class="card-category">Drinks</span>
+              <div class="card-top-row">
+                <p class="item-name">Mango Smoothie</p>
+                <span class="item-price">AED 22</span>
+              </div>
               <p class="item-desc">Fresh mango, yogurt</p>
+              <div class="item-tags">
+                <svg class="veg-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19c7 0 13-5 13-13 0-1 0-2-.3-3C10 3.5 5 8 5 15v4Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                <span class="tag-label">Veg</span>
+              </div>
             </div>
           </li>
           <li class="menu-card">
-            <div class="card-photo-frame">
-              <img class="card-photo" src="assets/images/iced-coffee.jpg" alt="Iced Coffee">
-            </div>
-            <span class="icon-badge icon-badge--coral rot-b">
-              <img class="icon" src="assets/icons/drink.svg" alt="">
-            </span>
-            <span class="price-stamp rot-c">[AED PRICE]</span>
-            <div class="card-overlay">
-              <p class="item-name">Iced Coffee</p>
+            <button type="button" class="card-photo-btn"
+              data-name="Iced Coffee" data-price="AED 18" data-category="Drinks"
+              data-desc="Espresso, milk, ice"
+              data-photo="assets/images/iced-coffee.jpg" data-veg="true" aria-haspopup="dialog">
+              <img class="card-photo" src="assets/images/iced-coffee.jpg" alt="Iced Coffee &mdash; tap to view details">
+            </button>
+            <div class="card-body">
+              <span class="card-category">Drinks</span>
+              <div class="card-top-row">
+                <p class="item-name">Iced Coffee</p>
+                <span class="item-price">AED 18</span>
+              </div>
               <p class="item-desc">Espresso, milk, ice</p>
+              <div class="item-tags">
+                <svg class="veg-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19c7 0 13-5 13-13 0-1 0-2-.3-3C10 3.5 5 8 5 15v4Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                <span class="tag-label">Veg</span>
+              </div>
+            </div>
+          </li>
+          <li class="menu-card">
+            <button type="button" class="card-photo-btn"
+              data-name="Strawberry Banana Smoothie" data-price="AED 23" data-category="Drinks"
+              data-desc="Strawberry, banana, yogurt"
+              data-photo="assets/images/strawberry-banana-smoothie.jpg" data-veg="true" aria-haspopup="dialog">
+              <img class="card-photo" src="assets/images/strawberry-banana-smoothie.jpg" alt="Strawberry Banana Smoothie &mdash; tap to view details">
+            </button>
+            <div class="card-body">
+              <span class="card-category">Drinks</span>
+              <div class="card-top-row">
+                <p class="item-name">Strawberry Banana Smoothie</p>
+                <span class="item-price">AED 23</span>
+              </div>
+              <p class="item-desc">Strawberry, banana, yogurt</p>
+              <div class="item-tags">
+                <svg class="veg-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19c7 0 13-5 13-13 0-1 0-2-.3-3C10 3.5 5 8 5 15v4Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                <span class="tag-label">Veg</span>
+              </div>
+            </div>
+          </li>
+          <li class="menu-card">
+            <button type="button" class="card-photo-btn"
+              data-name="Fresh Orange Juice" data-price="AED 17" data-category="Drinks"
+              data-desc="Cold-pressed orange juice"
+              data-photo="assets/images/orange-juice.jpg" data-veg="true" aria-haspopup="dialog">
+              <img class="card-photo" src="assets/images/orange-juice.jpg" alt="Fresh Orange Juice &mdash; tap to view details">
+            </button>
+            <div class="card-body">
+              <span class="card-category">Drinks</span>
+              <div class="card-top-row">
+                <p class="item-name">Fresh Orange Juice</p>
+                <span class="item-price">AED 17</span>
+              </div>
+              <p class="item-desc">Cold-pressed orange juice</p>
+              <div class="item-tags">
+                <svg class="veg-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19c7 0 13-5 13-13 0-1 0-2-.3-3C10 3.5 5 8 5 15v4Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                <span class="tag-label">Veg</span>
+              </div>
             </div>
           </li>
         </ul>
@@ -130,6 +322,69 @@
 
 </div>
 
-<script src="js/menu.js"></script>
+<!-- Food item detail -->
+<div class="detail-overlay" id="detail-overlay" hidden>
+  <div class="detail-panel" role="dialog" aria-modal="true" aria-labelledby="detail-name">
+    <button type="button" class="detail-back" id="detail-close" aria-label="Back to menu">
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+        <path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <img class="detail-photo" id="detail-photo" src="" alt="">
+    <div class="detail-body">
+      <span class="detail-category" id="detail-category"></span>
+      <div class="detail-heading">
+        <h3 class="detail-name" id="detail-name"></h3>
+        <span class="detail-price" id="detail-price"></span>
+      </div>
+      <div class="detail-tags" id="detail-tags" hidden>
+        <svg class="veg-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19c7 0 13-5 13-13 0-1 0-2-.3-3C10 3.5 5 8 5 15v4Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        <span class="tag-label">Vegetarian</span>
+      </div>
+      <p class="detail-desc" id="detail-desc"></p>
+      <div class="detail-section" id="detail-ingredients-wrap" hidden>
+        <p class="detail-section-title">Ingredients</p>
+        <p class="detail-section-text" id="detail-ingredients"></p>
+      </div>
+      <div class="detail-section" id="detail-allergens-wrap" hidden>
+        <p class="detail-section-title">Allergens</p>
+        <p class="detail-section-text" id="detail-allergens"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Restaurant info -->
+<div class="detail-overlay" id="info-overlay" hidden>
+  <div class="detail-panel info-panel" role="dialog" aria-modal="true" aria-labelledby="info-title">
+    <button type="button" class="detail-back" id="info-close" aria-label="Close">
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+        <path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+    <div class="detail-body">
+      <h3 class="info-title" id="info-title">Gecko</h3>
+      <p class="info-desc">Beachside kiosk serving cr&ecirc;pes, waffles, smoothies &amp; coffee at Kite Beach.</p>
+      <div class="info-row">
+        <svg class="info-row-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5C5 5.9 8.1 3 12 3s7 2.9 7 6.5C19 14.8 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9.5" r="2.2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+        <span>Kite Beach, Umm Suqeim, Dubai</span>
+      </div>
+      <div class="info-row">
+        <svg class="info-row-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3.5 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <span>[Add opening hours]</span>
+      </div>
+      <div class="info-row">
+        <svg class="info-row-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h3l1.5 4-2 1.5a11 11 0 0 0 5 5l1.5-2 4 1.5v3a2 2 0 0 1-2 2C10.5 19 5 13.5 5 6a2 2 0 0 1 1-2Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        <span>[Add phone number]</span>
+      </div>
+      <div class="info-row">
+        <svg class="info-row-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="16.2" cy="7.8" r=".9" fill="currentColor"/></svg>
+        <span>[Add social media links]</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/menu.js?v=9"></script>
 </body>
 </html>
